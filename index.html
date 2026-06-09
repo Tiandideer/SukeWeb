@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SUKE Acrylic — Precision PMMA Acrylic Sheet Manufacturer</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Global variables */
+    :root {
+      --color-primary: #1B3A6B;
+      --color-accent: #D4A017;
+      --color-bg: #FFFFFF;
+      --color-muted-bg: #F5F6F8;
+      --text-main: #2D2D2D;
+      --text-sub: #6B7280;
+      --shadow-default: 0 2px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+      --page-max-width: 1200px;
+      --page-padding-desktop: 80px;
+      --page-padding-mobile: 20px;
+      --transition: 0.25s ease;
+    }
+
+    /* Base */
+    html {
+      scroll-behavior: smooth
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: var(--text-main);
+      background: var(--color-bg);
+      font-size: 16px;
+      line-height: 1.7
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-primary);
+      margin: 0
+    }
+
+    p {
+      margin: 0
+    }
+
+    .wrapper {
+      max-width: var(--page-max-width);
+      margin: 0 auto;
+      padding-left: var(--page-padding-desktop);
+      padding-right: var(--page-padding-desktop)
+    }
+
+    /* Navbar */
+    header.nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: block;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px
+    }
+
+    .nav-inner .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .logo-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-family: Inter
+    }
+
+    .brand .title {
+      font-weight: 700;
+      color: #fff
+    }
+
+    .brand .subtitle {
+      font-style: italic;
+      color: rgba(173, 199, 232, 0.9);
+      font-size: 12px;
+      margin-top: 2px
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-menu a.active {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .nav-cta {
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-weight: 600;
+      transition: transform var(--transition), opacity var(--transition)
+    }
+
+    .nav-cta:hover {
+      opacity: 0.9;
+      transform: translateY(-2px)
+    }
+
+    header.nav.scrolled {
+      background: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15)
+    }
+
+    /* Hero */
+    /* ═══ HERO SECTION ═══ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center
+    }
+
+    .hero .media-placeholder {
+      position: absolute;
+      inset: 0;
+      background: #d9dfe8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8b94a3;
+      font-weight: 600
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(27, 58, 107, 0.85) 0%, rgba(27, 58, 107, 0.2) 60%);
+    }
+
+    .hero .wrapper {
+      position: relative;
+      z-index: 2
+    }
+
+    .hero .hero-content {
+      max-width: 640px;
+      color: #fff;
+      padding-left: 0
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1;
+      color: #fff
+    }
+
+    .hero .subtitle {
+      color: var(--color-accent);
+      font-size: 24px;
+      margin-top: 16px
+    }
+
+    .hero .meta {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      margin-top: 12px
+    }
+
+    .hero .cta {
+      margin-top: 32px;
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: transform var(--transition), opacity var(--transition)
+    }
+
+    .hero .cta:hover {
+      transform: translateY(-2px);
+      opacity: 0.9
+    }
+
+    /* Numbers trust bar */
+    /* ═══ NUMBERS SECTION ═══ */
+    .numbers {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 48px 0
+    }
+
+    .numbers .nums {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .numbers .num {
+      flex: 1;
+      text-align: center;
+      padding: 0 12px
+    }
+
+    .numbers .num:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.2)
+    }
+
+    .numbers .num .big {
+      font-size: 48px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700
+    }
+
+    .numbers .num .small {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+      margin-top: 6px
+    }
+
+    /* Featured Products */
+    /* ═══ FEATURED PRODUCTS ═══ */
+    .section {
+      padding-top: 80px;
+      padding-bottom: 80px
+    }
+
+    .section h2 {
+      font-size: 36px;
+      text-align: center
+    }
+
+    .section .lead {
+      font-size: 14px;
+      color: var(--text-sub);
+      text-align: center;
+      margin-top: 12px
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 32px
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition)
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover)
+    }
+
+    .product-card .img {
+      height: 200px;
+      background: #E5E7EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9CA3AF
+    }
+
+    .product-card .body {
+      padding: 20px
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: var(--text-sub)
+    }
+
+    .product-card .more {
+      margin-top: 12px;
+      color: var(--color-primary);
+      font-weight: 600
+    }
+
+    .view-all {
+      display: block;
+      margin: 40px auto 0 auto;
+      width: max-content;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none
+    }
+
+    /* Built for Long-Term Industrial Supply */
+    /* ═══ INDUSTRIAL SUPPLY ═══ */
+    .gray-section {
+      background: var(--color-muted-bg)
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px
+    }
+
+    .info-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 0;
+      box-shadow: var(--shadow-default);
+      overflow: hidden
+    }
+
+    .info-card .img {
+      height: 200px;
+      background: #E5E7EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9CA3AF
+    }
+
+    .info-card .body {
+      padding: 20px
+    }
+
+    /* How We Support Bulk Orders */
+    .support-item {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 48px
+    }
+
+    .support-item .num-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: var(--color-primary);
+      opacity: 0.15
+    }
+
+    .support-item .content {
+      flex: 1
+    }
+
+    .support-item .img {
+      width: 360px;
+      height: 220px;
+      background: #E5E7EB;
+      border-radius: 12px;
+      flex-shrink: 0
+    }
+
+    /* FAQ */
+    .faq-wrap {
+      display: flex;
+      gap: 24px
+    }
+
+    .faq-left {
+      flex: 0 0 35%
+    }
+
+    .faq-right {
+      flex: 1
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 18px 24px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: max-height var(--transition), box-shadow var(--transition)
+    }
+
+    .faq-item .q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .faq-item .a {
+      color: var(--text-sub);
+      margin-top: 12px;
+      display: none
+    }
+
+    .faq-item.open {
+      box-shadow: var(--shadow-hover)
+    }
+
+    .faq-item.open .a {
+      display: block
+    }
+
+    /* Footer */
+    footer {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 60px 0
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 24px
+    }
+
+    .footer-grid>div {
+      flex: 1
+    }
+
+    .footer-line {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 20px 0
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: transparent;
+      transition: background var(--transition), border-color var(--transition)
+    }
+
+    .social-btn:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent)
+    }
+
+    .copyright {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-top: 12px
+    }
+
+    /* Responsive rules */
+    @media (max-width:1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .cards-3 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width:768px) {
+      .wrapper {
+        padding-left: var(--page-padding-mobile);
+        padding-right: var(--page-padding-mobile)
+      }
+
+      .nav-inner {
+        height: 64px
+      }
+
+      .nav-menu {
+        display: none
+      }
+
+      .hero h1 {
+        font-size: 36px
+      }
+
+      .hero .subtitle {
+        font-size: 18px
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr
+      }
+
+      .cards-3 {
+        grid-template-columns: 1fr
+      }
+
+      .numbers .nums {
+        flex-wrap: wrap
+      }
+
+      .numbers .num {
+        flex: 0 0 50%;
+        padding: 12px
+      }
+
+      .faq-wrap {
+        flex-direction: column
+      }
+
+      .faq-left {
+        width: 100%
+      }
+
+      .support-item {
+        flex-direction: column
+      }
+
+      .support-item .img {
+        width: 100%;
+        height: 220px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="nav" id="site-nav">
+    <div class="wrapper nav-inner">
+      <div class="brand">
+        <div class="logo-mark">SK</div>
+        <div>
+          <div class="title">SUKE</div>
+          <div class="subtitle">Acrylic Sheet Manufacturer</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#products">Product Categories</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="hero">
+    <div class="media-placeholder">hero-video.mp4 placeholder (video)</div>
+    <div class="wrapper">
+      <div class="hero-content">
+        <h1>Precision PMMA Acrylic Sheet Manufacturer</h1>
+        <div class="subtitle">Reliable Optical & Industrial Acrylic Solutions for Global OEM Projects</div>
+        <div class="meta">Stable Production · Strict Quality Control · Custom OEM Capability</div>
+        <a href="#contact" class="cta">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ NUMBERS SECTION ═══ -->
+  <section class="numbers">
+    <div class="wrapper nums">
+      <div class="num">
+        <div class="big" data-target="2013" data-from="2000">2000</div>
+        <div class="small">Est. / Founded</div>
+      </div>
+      <div class="num">
+        <div class="big" data-target="240">0</div>
+        <div class="small">240T / Per Month</div>
+      </div>
+      <div class="num">
+        <div class="big" data-target="5000">0</div>
+        <div class="small">5,000T / Per Year</div>
+      </div>
+      <div class="num">
+        <div class="big" data-target="15">0</div>
+        <div class="small">15+ / Countries Served</div>
+      </div>
+      <div class="num">
+        <div class="big">Custom OEM</div>
+        <div class="small">Available</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURED PRODUCTS ═══ -->
+  <section class="section" id="products">
+    <div class="wrapper">
+      <h2>Featured Products</h2>
+      <div class="lead">Selected PMMA sheet solutions for lighting, display and industrial OEM applications</div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="img">Light Guide Sheet (LGP) — placeholder image</div>
+          <div class="body">
+            <h3>Light Guide Sheet (LGP)</h3>
+            <p>Uniform light distribution panel</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">Clear Acrylic Sheet — placeholder image</div>
+          <div class="body">
+            <h3>Clear Acrylic Sheet</h3>
+            <p>High transparency optical grade</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">Colored Acrylic Sheet — placeholder image</div>
+          <div class="body">
+            <h3>Colored Acrylic Sheet</h3>
+            <p>Available in multiple colors</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">Frosted Acrylic Sheet — placeholder image</div>
+          <div class="body">
+            <h3>Frosted Acrylic Sheet</h3>
+            <p>Soft diffused light effect</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">PMMA Diffusion Sheet — placeholder image</div>
+          <div class="body">
+            <h3>PMMA Diffusion Sheet</h3>
+            <p>Various haze levels available</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">Prismatic Light Control — placeholder image</div>
+          <div class="body">
+            <h3>Prismatic Light Control Sheet</h3>
+            <p>Precision optical control</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">Blue Light Blocking Sheet — placeholder image</div>
+          <div class="body">
+            <h3>Blue Light Blocking Sheet (Reflective)</h3>
+            <p>Eye protection series</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img">PC Diffusion Sheet — placeholder image</div>
+          <div class="body">
+            <h3>PC Diffusion Sheet</h3>
+            <p>High heat resistance</p>
+            <div class="more">Learn More →</div>
+          </div>
+        </div>
+      </div>
+      <a class="view-all" href="#products">View All Products →</a>
+    </div>
+  </section>
+
+  <!-- ═══ BUILT FOR LONG-TERM INDUSTRIAL SUPPLY ═══ -->
+  <section class="section gray-section" id="about">
+    <div class="wrapper">
+      <h2>Built for Long-Term Industrial Supply</h2>
+      <div class="lead" style="max-width:680px;margin:12px auto 0;">We deliver consistent quality, large-volume
+        production and export-ready handling to support long-term OEM partnerships.</div>
+      <a href="#about" class="view-all" style="background:var(--color-primary);margin-top:24px">About SUKE →</a>
+      <div class="cards-3">
+        <div class="info-card">
+          <div class="img">Stable Manufacturing &amp; Quality Control — image</div>
+          <div class="body">
+            <h3>Stable Manufacturing &amp; Strict Quality Control</h3>
+            <p>Structured production control and batch-based inspection ensure stable thickness tolerance and consistent
+              optical performance from raw material selection to final delivery.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="img">Custom OEM Capability — image</div>
+          <div class="body">
+            <h3>Custom OEM Capability &amp; Technical Support</h3>
+            <p>Experienced in supporting industrial and lighting applications, aligning specifications and performance
+              parameters to meet OEM production requirements.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="img">Global Export — image</div>
+          <div class="body">
+            <h3>Reliable Production &amp; Global Export Experience</h3>
+            <p>Long-term export experience in North America, France, Spain and Japan, with established practices in
+              quality standards, full-container shipment and export documentation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW WE SUPPORT BULK ORDERS ═══ -->
+  <section class="section">
+    <div class="wrapper">
+      <h2>How We Support Bulk Orders</h2>
+      <div class="lead">From specification alignment to logistics, we support each stage of your bulk order.</div>
+
+      <div style="margin-top:32px">
+        <div class="support-item">
+          <div class="num-mark">01</div>
+          <div class="content">
+            <h3>Stable Monthly Production Capacity</h3>
+            <p>With a monthly output of approximately 240 tons. We support sheet widths up to 1320mm and standard
+              thicknesses from 1–12mm, ensuring reliable supply for bulk demand.</p>
+          </div>
+          <div class="img">Image placeholder</div>
+        </div>
+
+        <div class="support-item">
+          <div class="num-mark">02</div>
+          <div class="img">Image placeholder</div>
+          <div class="content">
+            <h3>Standard Specifications &amp; Flexible Customization</h3>
+            <p>Our standard sheet size is 1200×2440mm. Custom sizes and colored sheets are available upon request.
+              Standard sheets: MOQ 1 ton. Custom specifications: MOQ 3 tons.</p>
+          </div>
+        </div>
+
+        <div class="support-item">
+          <div class="num-mark">03</div>
+          <div class="content">
+            <h3>Clear Lead Time &amp; Production Planning</h3>
+            <p>Typical lead time ranges from 12–20 days depending on specification and volume. Structured production
+              scheduling ensures stable and predictable delivery.</p>
+          </div>
+          <div class="img">Image placeholder</div>
+        </div>
+
+        <div class="support-item">
+          <div class="num-mark">04</div>
+          <div class="img">Image placeholder</div>
+          <div class="content">
+            <h3>Full-Container Export &amp; Logistics Support</h3>
+            <p>We regularly handle full-container shipments. Professional packaging, secure loading methods and complete
+              export documentation are provided to support international logistics.</p>
+          </div>
+        </div>
+
+        <div class="support-item">
+          <div class="num-mark">05</div>
+          <div class="content">
+            <h3>Sample Support &amp; Long-Term Supply Cooperation</h3>
+            <p>Samples are available for performance verification before bulk production. Optimized pricing structures
+              are offered for full-container orders and long-term supply agreements.</p>
+          </div>
+          <div class="img">Image placeholder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section gray-section">
+    <div class="wrapper">
+      <h2>FAQ</h2>
+      <div class="faq-wrap">
+        <div class="faq-left">
+          <h3 style="color:var(--color-primary)">Have additional questions?</h3>
+          <p style="color:var(--text-sub);margin-top:12px">For detailed specifications, bulk pricing, or technical
+            inquiries, please contact our team at: <br />sales@suke-acrylic.com</p>
+          <a href="mailto:sales@suke-acrylic.com" class="cta"
+            style="display:inline-block;margin-top:24px;background:var(--color-accent);">Contact Our Team</a>
+        </div>
+        <div class="faq-right">
+          <div class="faq-item" data-index="0">
+            <div class="q">
+              <div style="font-weight:500;color:var(--color-primary)">Is the sheet suitable for outdoor use?</div>
+              <div class="toggle">+</div>
+            </div>
+            <div class="a">Answer placeholder: Many PMMA grades are UV-stable and suitable for outdoor applications with
+              protective coatings available.</div>
+          </div>
+          <div class="faq-item" data-index="1">
+            <div class="q">
+              <div style="font-weight:500;color:var(--color-primary)">Does the product come with protective film?</div>
+              <div class="toggle">+</div>
+            </div>
+            <div class="a">Answer placeholder: Sheets typically come with protective PE film to avoid abrasion during
+              handling and transport.</div>
+          </div>
+          <div class="faq-item" data-index="2">
+            <div class="q">
+              <div style="font-weight:500;color:var(--color-primary)">Can the sheets be further processed?</div>
+              <div class="toggle">+</div>
+            </div>
+            <div class="a">Answer placeholder: Yes—cutting, routing, CNC, bending and bonding services are commonly
+              available.</div>
+          </div>
+          <div class="faq-item" data-index="3">
+            <div class="q">
+              <div style="font-weight:500;color:var(--color-primary)">What is the thickness tolerance?</div>
+              <div class="toggle">+</div>
+            </div>
+            <div class="a">Answer placeholder: Typical tolerance depends on thickness; please consult our technical
+              datasheets for precise tolerances.</div>
+          </div>
+          <div class="faq-item" data-index="4">
+            <div class="q">
+              <div style="font-weight:500;color:var(--color-primary)">Can the product replace tempered glass?</div>
+              <div class="toggle">+</div>
+            </div>
+            <div class="a">Answer placeholder: PMMA offers high clarity but different impact and thermal properties
+              compared to tempered glass; consult our engineers for application fit.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="logo-mark">SK</div>
+            <div>
+              <div style="font-weight:700">SUKE</div>
+              <div style="font-style:italic;color:rgba(173,199,232,0.9);font-size:12px">Acrylic Sheet Manufacturer</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.15em;font-size:12px">EMAIL</div>
+          <div style="opacity:0.8;margin-top:8px">sales@suke-acrylic.com</div>
+          <div style="height:12px"></div>
+          <div style="letter-spacing:0.15em;font-size:12px">PHONE</div>
+          <div style="margin-top:8px">+61 0411984116<br />+86 15365087585</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FACTORY ADDRESS</div>
+          <div style="margin-top:8px">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing,
+            Jiangsu Province, China</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FOLLOW US</div>
+          <div style="margin-top:12px"><button class="social-btn">in</button></div>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="copyright">© 2025 SUKE Acrylic. All Rights Reserved. Designed by Didi</div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll behavior
+    (function () {
+      const nav = document.getElementById('site-nav');
+      function checkScroll() {
+        if (window.scrollY > 80) { nav.classList.add('scrolled') } else { nav.classList.remove('scrolled') }
+      }
+      document.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll();
+    })();
+
+    // Number counters when visible
+    (function () {
+      const nums = document.querySelectorAll('.numbers .big');
+      const opts = { root: null, threshold: 0.4 };
+      function animate(el, from, to, duration) {
+        let start = null; const diff = to - from;
+        function step(ts) {
+          if (!start) start = ts; const progress = Math.min((ts - start) / duration, 1);
+          el.textContent = Math.floor(from + diff * progress);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      const obs = new IntersectionObserver((entries, ob) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target')) || null;
+            const from = parseInt(el.getAttribute('data-from')) || 0;
+            if (target) { animate(el, from, target, 1400); el.setAttribute('data-target', ''); }
+          }
+        })
+      }, opts);
+      nums.forEach(n => obs.observe(n));
+    })();
+
+    // FAQ accordion
+    (function () {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(it => {
+        it.addEventListener('click', () => {
+          const open = it.classList.toggle('open');
+          const toggle = it.querySelector('.toggle');
+          toggle.textContent = open ? '×' : '+';
+        });
+      });
+    })();
+
+  </script>
+</body>
+
+</html>
