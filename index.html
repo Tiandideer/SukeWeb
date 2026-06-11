@@ -69,7 +69,8 @@
       right: 0;
       z-index: 1000;
       display: block;
-      transition: background var(--transition), box-shadow var(--transition);
+      background: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     }
 
     .nav-inner {
@@ -148,10 +149,6 @@
       transform: translateY(-2px)
     }
 
-    header.nav.scrolled {
-      background: var(--color-primary);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15)
-    }
 
     /* Hero */
     /* ═══ HERO SECTION ═══ */
@@ -894,15 +891,6 @@
   </footer>
 
   <script>
-    // Navbar scroll behavior
-    (function () {
-      const nav = document.getElementById('site-nav');
-      function checkScroll() {
-        if (window.scrollY > 80) { nav.classList.add('scrolled') } else { nav.classList.remove('scrolled') }
-      }
-      document.addEventListener('scroll', checkScroll, { passive: true });
-      checkScroll();
-    })();
 
     // Number counters when visible
     (function () {
