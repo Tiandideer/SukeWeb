@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — SUKE Acrylic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1B3A6B;
+      --color-accent: #D4A017;
+      --color-bg: #FFFFFF;
+      --color-muted-bg: #F5F5F5;
+      --text-main: #2D2D2D;
+      --text-sub: #6B7280;
+      --shadow-default: 0 2px 12px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.15);
+      --page-max-width: 1200px;
+      --page-padding-desktop: 80px;
+      --page-padding-mobile: 20px;
+      --transition: 0.25s ease;
+      --nav-height: 80px;
+    }
+
+    html { scroll-behavior: smooth }
+    * { box-sizing: border-box }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: var(--text-main);
+      background: var(--color-bg);
+      font-size: 16px;
+      line-height: 1.7;
+      padding-top: var(--nav-height);
+    }
+
+    h1, h2, h3 {
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: var(--color-primary);
+      margin: 0
+    }
+    p { margin: 0 }
+
+    .wrapper {
+      max-width: var(--page-max-width);
+      margin: 0 auto;
+      padding-left: var(--page-padding-desktop);
+      padding-right: var(--page-padding-desktop)
+    }
+
+    /* ── Navbar ── */
+    header.nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-height)
+    }
+    .nav-inner .brand { display: flex; align-items: center; gap: 12px }
+    .logo-mark {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-family: Inter
+    }
+    .brand .title { font-weight: 700; color: #fff }
+    .brand .subtitle {
+      font-style: italic;
+      color: rgba(173,199,232,0.9);
+      font-size: 12px; margin-top: 2px
+    }
+    .nav-menu { display: flex; align-items: center; gap: 24px }
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s ease
+    }
+    .nav-menu a:hover { color: #D4A017 }
+    .nav-menu a.active { color: #D4A017; font-weight: 700 }
+    .nav-cta {
+      background: var(--color-accent);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-weight: 600;
+      transition: transform var(--transition), opacity var(--transition)
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-2px) }
+
+    /* ── Product Dropdown ── */
+    .nav-dropdown {
+      position: relative;
+      align-self: stretch;
+      display: flex; align-items: center
+    }
+    .nav-dd-trigger {
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 4px;
+      user-select: none; white-space: nowrap;
+      transition: color 0.2s ease;
+      text-decoration: none
+    }
+    .nav-dd-trigger.active { color: var(--color-accent); font-weight: 700 }
+    .nav-dropdown:hover .nav-dd-trigger { color: var(--color-accent) }
+    .dd-trigger-arrow {
+      font-size: 20px; display: inline-block; line-height: 1;
+      transition: transform 0.2s ease
+    }
+    .nav-dropdown:hover .dd-trigger-arrow { transform: rotate(180deg) }
+
+    .dd-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0;
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      padding: 6px 0; width: 260px; z-index: 2000
+    }
+    .nav-dropdown:hover .dd-menu { display: block }
+    .nav-dropdown .dd-item { position: relative }
+    .nav-dropdown .dd-item-label {
+      display: flex; align-items: center;
+      padding: 9px 14px 9px 16px;
+      font-size: 12px; color: #666666;
+      cursor: pointer;
+      line-height: 1.4; gap: 8px;
+      transition: color 0.2s ease;
+      user-select: none;
+      text-decoration: none
+    }
+    .nav-dropdown .dd-item-label-text { flex: 1 }
+    .nav-dropdown .dd-item-arrow {
+      font-size: 20px; flex-shrink: 0;
+      display: inline-block; line-height: 1;
+      transition: transform 0.2s ease; color: inherit
+    }
+    .nav-dropdown .dd-item-label:hover,
+    .nav-dropdown .dd-item.sub-open > .dd-item-label { color: var(--color-accent) }
+    .nav-dropdown .dd-item.sub-open > .dd-item-label .dd-item-arrow { transform: rotate(-90deg) }
+
+    .nav-dropdown .dd-item-link {
+      display: block; padding: 9px 16px;
+      font-size: 12px; color: #666666;
+      text-decoration: none; line-height: 1.4;
+      text-transform: none; letter-spacing: normal;
+      transition: color 0.2s ease
+    }
+    .nav-dropdown .dd-item-link:hover { color: var(--color-accent) }
+
+    .nav-dropdown .dd-sub {
+      display: none;
+      position: absolute; left: 100%; top: 0;
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      padding: 6px 0; z-index: 2001
+    }
+    .nav-dropdown .dd-item.sub-open > .dd-sub { display: block }
+    .nav-dropdown .dd-sub a {
+      display: block; padding: 9px 16px;
+      font-size: 12px; color: #666666;
+      text-decoration: none; white-space: nowrap;
+      text-transform: none; letter-spacing: normal;
+      transition: color 0.2s ease
+    }
+    .nav-dropdown .dd-sub a:hover { color: var(--color-accent) }
+
+    /* ── Category Tab Bar ── */
+    .cat-tab-bar {
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 900;
+      background: #fff;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .cat-tabs {
+      display: flex;
+      align-items: stretch;
+    }
+    .cat-tab {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px 20px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #666666;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.4;
+      position: relative;
+      transition: color 0.2s ease;
+      white-space: normal;
+      min-height: 76px;
+    }
+    .cat-tab:hover { color: var(--color-primary) }
+    .cat-tab.active {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .cat-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: var(--color-accent);
+      border-radius: 1px;
+    }
+
+    /* ── Products Section ── */
+    .products-section {
+      background: var(--color-muted-bg);
+      padding: 48px 0 64px;
+      min-height: 400px;
+    }
+    .tab-panel { display: none }
+    .tab-panel.active { display: block }
+
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .prod-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .prod-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .prod-card-img {
+      height: 200px;
+      background: #E5E7EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9CA3AF;
+      font-size: 13px;
+      text-align: center;
+      padding: 16px;
+      flex-shrink: 0;
+    }
+    .prod-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .prod-card-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.4;
+      min-height: 50px;
+      text-align: left;
+    }
+    .prod-card-desc {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      min-height: 48px;
+      margin-top: 8px;
+      text-align: left;
+    }
+    .prod-card-more {
+      margin-top: auto;
+      padding-top: 16px;
+      text-align: center;
+    }
+    .prod-card-more a {
+      font-size: 15px;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .prod-card-more a:hover { color: var(--color-accent) }
+
+    /* ── Contact CTA ── */
+    .contact-cta {
+      background: var(--color-primary);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .contact-cta h2 {
+      font-size: 32px;
+      color: #fff;
+    }
+    .contact-cta .cta-text {
+      font-size: 16px;
+      color: #fff;
+      margin-top: 20px;
+      line-height: 1.9;
+    }
+    .contact-cta .cta-btn {
+      display: inline-block;
+      margin-top: 32px;
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .contact-cta .cta-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 60px 0
+    }
+    .footer-grid { display: flex; gap: 24px }
+    .footer-grid > div { flex: 1 }
+    .footer-line {
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 20px 0
+    }
+    .social-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      color: #fff; background: transparent;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition)
+    }
+    .social-btn:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent)
+    }
+    .copyright {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px; margin-top: 12px
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .prod-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+    @media (max-width: 768px) {
+      .wrapper {
+        padding-left: var(--page-padding-mobile);
+        padding-right: var(--page-padding-mobile)
+      }
+      .nav-inner { height: 64px }
+      :root { --nav-height: 64px }
+      body { padding-top: 64px }
+      .nav-menu { display: none }
+      .prod-grid { grid-template-columns: 1fr }
+      .cat-tabs { overflow-x: auto }
+      .cat-tab { font-size: 13px; padding: 10px 8px 16px; min-width: 120px; flex: 0 0 auto }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="nav" id="site-nav">
+    <div class="wrapper nav-inner">
+      <div class="brand">
+        <div class="logo-mark">SK</div>
+        <div>
+          <div class="title">SUKE</div>
+          <div class="subtitle">Acrylic Sheet Manufacturer</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-dd-trigger active">Product Categories <span class="dd-trigger-arrow">▾</span></a>
+          <div class="dd-menu">
+            <div class="dd-item has-sub">
+              <a class="dd-item-label" href="products.html#optical-grade">
+                <span class="dd-item-label-text">Optical-Grade PMMA Sheet Series</span>
+                <span class="dd-item-arrow">▾</span>
+              </a>
+              <div class="dd-sub">
+                <a href="#">Light Guide Sheet (LGP)</a>
+                <a href="#">Clear Acrylic Sheet</a>
+                <a href="#">Colored Acrylic Sheet</a>
+                <a href="#">Frosted Acrylic Sheet</a>
+              </div>
+            </div>
+            <div class="dd-item has-sub">
+              <a class="dd-item-label" href="products.html#diffusion">
+                <span class="dd-item-label-text">PMMA Diffusion Sheet Series</span>
+                <span class="dd-item-arrow">▾</span>
+              </a>
+              <div class="dd-sub">
+                <a href="#">Optical PMMA Diffuser Sheet</a>
+                <a href="#">Prismatic Diffuser Sheet</a>
+                <a href="#">Opal PMMA Sheet</a>
+              </div>
+            </div>
+            <div class="dd-item has-sub">
+              <a class="dd-item-label" href="products.html#blue-light">
+                <span class="dd-item-label-text">Blue-Light Filtering PMMA Sheet Series</span>
+                <span class="dd-item-arrow">▾</span>
+              </a>
+              <div class="dd-sub">
+                <a href="#">Blue-Light Reflective Acrylic Sheet (Blue Tint)</a>
+                <a href="#">Blue-Light Absorbing Acrylic Sheet (Amber Tint)</a>
+              </div>
+            </div>
+            <div class="dd-item no-sub">
+              <a class="dd-item-link" href="products.html#pc">Polycarbonate (PC) Diffuser Sheet</a>
+            </div>
+            <div class="dd-item no-sub">
+              <a class="dd-item-link" href="products.html#ps">Polystyrene (PS) Diffuser Sheet</a>
+            </div>
+          </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ CATEGORY TAB BAR ═══ -->
+  <div class="cat-tab-bar">
+    <div class="wrapper">
+      <div class="cat-tabs" role="tablist">
+        <button class="cat-tab active" role="tab" data-tab="optical-grade" aria-selected="true">
+          Optical-Grade PMMA<br>Sheet Series
+        </button>
+        <button class="cat-tab" role="tab" data-tab="diffusion" aria-selected="false">
+          PMMA Diffusion<br>Sheet Series
+        </button>
+        <button class="cat-tab" role="tab" data-tab="blue-light" aria-selected="false">
+          Blue-Light Filtering PMMA<br>Sheet Series
+        </button>
+        <button class="cat-tab" role="tab" data-tab="pc" aria-selected="false">
+          Polycarbonate (PC)<br>Diffuser Sheet
+        </button>
+        <button class="cat-tab" role="tab" data-tab="ps" aria-selected="false">
+          Polystyrene (PS)<br>Diffuser Sheet
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PRODUCTS SECTION ═══ -->
+  <section class="products-section">
+    <div class="wrapper">
+
+      <!-- Panel: Optical-Grade PMMA Sheet Series -->
+      <div class="tab-panel active" data-tab="optical-grade">
+        <div class="prod-grid">
+          <div class="prod-card">
+            <div class="prod-card-img">Light Guide Sheet (LGP) Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Light Guide Sheet (LGP)</div>
+              <div class="prod-card-desc">Uniform panel illumination</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Clear Acrylic Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Clear Acrylic Sheet</div>
+              <div class="prod-card-desc">Glass-like clarity and durability</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Colored Acrylic Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Colored Acrylic Sheet</div>
+              <div class="prod-card-desc">Vibrant colors for creative applications</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Frosted Acrylic Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Frosted Acrylic Sheet</div>
+              <div class="prod-card-desc">Soft light diffusion and glare reduction</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: PMMA Diffusion Sheet Series -->
+      <div class="tab-panel" data-tab="diffusion">
+        <div class="prod-grid">
+          <div class="prod-card">
+            <div class="prod-card-img">Optical PMMA Diffuser Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Optical PMMA Diffuser Sheet</div>
+              <div class="prod-card-desc">Uniform lighting with customizable haze</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Prismatic Diffuser Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Prismatic Diffuser Sheet</div>
+              <div class="prod-card-desc">Enhanced light control and efficiency</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Opal PMMA Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Opal PMMA Sheet</div>
+              <div class="prod-card-desc">Smooth illumination without visible LEDs</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Blue-Light Filtering PMMA Sheet Series -->
+      <div class="tab-panel" data-tab="blue-light">
+        <div class="prod-grid">
+          <div class="prod-card">
+            <div class="prod-card-img">Blue-Light Reflective Acrylic Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Blue-Light Reflective Acrylic Sheet (Blue Tint)</div>
+              <div class="prod-card-desc">Reflects blue light for protection</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-img">Blue-Light Absorbing Acrylic Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Blue-Light Absorbing Acrylic Sheet (Amber Tint)</div>
+              <div class="prod-card-desc">High-clarity blue-light absorption</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Polycarbonate (PC) Diffuser Sheet -->
+      <div class="tab-panel" data-tab="pc">
+        <div class="prod-grid">
+          <div class="prod-card">
+            <div class="prod-card-img">Polycarbonate (PC) Diffuser Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Polycarbonate (PC) Diffuser Sheet</div>
+              <div class="prod-card-desc">Tough, flexible and impact resistant</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Polystyrene (PS) Diffuser Sheet -->
+      <div class="tab-panel" data-tab="ps">
+        <div class="prod-grid">
+          <div class="prod-card">
+            <div class="prod-card-img">Polystyrene (PS) Diffuser Sheet Placeholder</div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Polystyrene (PS) Diffuser Sheet</div>
+              <div class="prod-card-desc">Cost-effective diffuser for indoor lighting</div>
+              <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT CTA ═══ -->
+  <section class="contact-cta" id="contact">
+    <div class="wrapper">
+      <h2>Need Help Choosing the Right Product?</h2>
+      <div class="cta-text">
+        Technical support and product recommendations.<br>
+        sales@suke-acrylic.com
+      </div>
+      <a href="mailto:sales@suke-acrylic.com" class="cta-btn">Email Our Team →</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="logo-mark">SK</div>
+            <div>
+              <div style="font-weight:700">SUKE</div>
+              <div style="font-style:italic;color:rgba(173,199,232,0.9);font-size:12px">Acrylic Sheet Manufacturer</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.15em;font-size:12px">EMAIL</div>
+          <div style="opacity:0.8;margin-top:8px">sales@suke-acrylic.com</div>
+          <div style="height:12px"></div>
+          <div style="letter-spacing:0.15em;font-size:12px">PHONE</div>
+          <div style="margin-top:8px">+61 0411984116<br />+86 15365087585</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FACTORY ADDRESS</div>
+          <div style="margin-top:8px">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing,
+            Jiangsu Province, China</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FOLLOW US</div>
+          <div style="margin-top:12px"><button class="social-btn">in</button></div>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="copyright">© 2025 SUKE Acrylic. All Rights Reserved. Designed by Didi</div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching
+    (function () {
+      var tabs = Array.from(document.querySelectorAll('.cat-tab'));
+      var panels = Array.from(document.querySelectorAll('.tab-panel'));
+      var validIds = ['optical-grade', 'diffusion', 'blue-light', 'pc', 'ps'];
+
+      function activateTab(id) {
+        tabs.forEach(function (t) {
+          var on = t.getAttribute('data-tab') === id;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('active', p.getAttribute('data-tab') === id);
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var id = tab.getAttribute('data-tab');
+          activateTab(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      function readHash() {
+        var hash = location.hash.slice(1);
+        if (hash && validIds.indexOf(hash) !== -1) activateTab(hash);
+      }
+
+      readHash();
+      window.addEventListener('hashchange', readHash);
+    })();
+
+    // Dropdown submenu switching
+    (function () {
+      var dropdown = document.querySelector('.nav-dropdown');
+      if (!dropdown) return;
+      var hasSubs = Array.from(dropdown.querySelectorAll('.dd-item.has-sub'));
+      var switchTimer;
+
+      function openSub(item) {
+        hasSubs.forEach(function (other) {
+          if (other !== item) other.classList.remove('sub-open');
+        });
+        item.classList.add('sub-open');
+      }
+
+      hasSubs.forEach(function (item) {
+        var label = item.querySelector('.dd-item-label');
+        var sub = item.querySelector('.dd-sub');
+
+        label.addEventListener('mouseenter', function () {
+          clearTimeout(switchTimer);
+          var anyOpen = hasSubs.some(function (o) { return o.classList.contains('sub-open'); });
+          if (anyOpen && !item.classList.contains('sub-open')) {
+            switchTimer = setTimeout(function () { openSub(item); }, 100);
+          } else {
+            openSub(item);
+          }
+        });
+
+        sub.addEventListener('mouseenter', function () {
+          clearTimeout(switchTimer);
+          item.classList.add('sub-open');
+        });
+      });
+
+      dropdown.querySelectorAll('.dd-item.no-sub').forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          clearTimeout(switchTimer);
+          hasSubs.forEach(function (s) { s.classList.remove('sub-open'); });
+        });
+      });
+
+      dropdown.querySelector('.dd-menu').addEventListener('mouseleave', function () {
+        clearTimeout(switchTimer);
+        hasSubs.forEach(function (item) { item.classList.remove('sub-open'); });
+      });
+    })();
+  </script>
+
+</body>
+</html>

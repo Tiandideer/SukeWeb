@@ -215,11 +215,12 @@
       padding: 9px 14px 9px 16px;
       font-size: 12px;
       color: #666666;
-      cursor: default;
+      cursor: pointer;
       line-height: 1.4;
       gap: 8px;
       transition: color 0.2s ease;
       user-select: none;
+      text-decoration: none;
     }
 
     .nav-dropdown .dd-item-label-text {
@@ -727,13 +728,13 @@
       <nav class="nav-menu">
         <a href="#" class="active">Home</a>
         <div class="nav-dropdown">
-          <span class="nav-dd-trigger">Product Categories <span class="dd-trigger-arrow">▾</span></span>
+          <a href="products.html" class="nav-dd-trigger">Product Categories <span class="dd-trigger-arrow">▾</span></a>
           <div class="dd-menu">
             <div class="dd-item has-sub">
-              <div class="dd-item-label">
+              <a class="dd-item-label" href="products.html#optical-grade">
                 <span class="dd-item-label-text">Optical-Grade PMMA Sheet Series</span>
                 <span class="dd-item-arrow">▾</span>
-              </div>
+              </a>
               <div class="dd-sub">
                 <a href="#">Light Guide Sheet (LGP)</a>
                 <a href="#">Clear Acrylic Sheet</a>
@@ -742,10 +743,10 @@
               </div>
             </div>
             <div class="dd-item has-sub">
-              <div class="dd-item-label">
+              <a class="dd-item-label" href="products.html#diffusion">
                 <span class="dd-item-label-text">PMMA Diffusion Sheet Series</span>
                 <span class="dd-item-arrow">▾</span>
-              </div>
+              </a>
               <div class="dd-sub">
                 <a href="#">Optical PMMA Diffuser Sheet</a>
                 <a href="#">Prismatic Diffuser Sheet</a>
@@ -753,20 +754,20 @@
               </div>
             </div>
             <div class="dd-item has-sub">
-              <div class="dd-item-label">
+              <a class="dd-item-label" href="products.html#blue-light">
                 <span class="dd-item-label-text">Blue-Light Filtering PMMA Sheet Series</span>
                 <span class="dd-item-arrow">▾</span>
-              </div>
+              </a>
               <div class="dd-sub">
                 <a href="#">Blue-Light Reflective Acrylic Sheet (Blue Tint)</a>
                 <a href="#">Blue-Light Absorbing Acrylic Sheet (Amber Tint)</a>
               </div>
             </div>
             <div class="dd-item no-sub">
-              <a class="dd-item-link" href="#">Polycarbonate (PC) Diffuser Sheet</a>
+              <a class="dd-item-link" href="products.html#pc">Polycarbonate (PC) Diffuser Sheet</a>
             </div>
             <div class="dd-item no-sub">
-              <a class="dd-item-link" href="#">Polystyrene (PS) Diffuser Sheet</a>
+              <a class="dd-item-link" href="products.html#ps">Polystyrene (PS) Diffuser Sheet</a>
             </div>
           </div>
         </div>
@@ -887,7 +888,7 @@
           </div>
         </div>
       </div>
-      <a class="view-all" href="#products">View All Products →</a>
+      <a class="view-all" href="products.html">View All Products →</a>
     </div>
   </section>
 
