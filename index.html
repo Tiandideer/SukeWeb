@@ -443,7 +443,9 @@
       border-radius: 12px;
       box-shadow: var(--shadow-default);
       overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition)
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column
     }
 
     .product-card:hover {
@@ -457,25 +459,34 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #9CA3AF
+      color: #9CA3AF;
+      flex-shrink: 0
     }
 
     .product-card .body {
-      padding: 20px
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
     }
 
     .product-card h3 {
       font-size: 16px;
+      line-height: 1.5;
+      min-height: 3em;
       margin-bottom: 8px
     }
 
     .product-card p {
       font-size: 14px;
+      line-height: 1.5;
+      min-height: 3em;
       color: var(--text-sub)
     }
 
     .product-card .more {
-      margin-top: 12px;
+      margin-top: auto;
+      padding-top: 12px;
       color: var(--color-primary);
       font-weight: 600
     }
@@ -827,7 +838,7 @@
           <div class="img">Light Guide Sheet (LGP) — placeholder image</div>
           <div class="body">
             <h3>Light Guide Sheet (LGP)</h3>
-            <p>Uniform light distribution panel</p>
+            <p>Uniform panel illumination</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
@@ -835,7 +846,7 @@
           <div class="img">Clear Acrylic Sheet — placeholder image</div>
           <div class="body">
             <h3>Clear Acrylic Sheet</h3>
-            <p>High transparency optical grade</p>
+            <p>Glass-like clarity and durability</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
@@ -843,47 +854,47 @@
           <div class="img">Colored Acrylic Sheet — placeholder image</div>
           <div class="body">
             <h3>Colored Acrylic Sheet</h3>
-            <p>Available in multiple colors</p>
+            <p>Vibrant colors for creative applications</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
         <div class="product-card">
-          <div class="img">Frosted Acrylic Sheet — placeholder image</div>
+          <div class="img">Optical PMMA Diffuser Sheet — placeholder image</div>
           <div class="body">
-            <h3>Frosted Acrylic Sheet</h3>
-            <p>Soft diffused light effect</p>
+            <h3>Optical PMMA Diffuser Sheet</h3>
+            <p>Uniform lighting with customizable haze</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
         <div class="product-card">
-          <div class="img">PMMA Diffusion Sheet — placeholder image</div>
+          <div class="img">Prismatic Diffuser Sheet — placeholder image</div>
           <div class="body">
-            <h3>PMMA Diffusion Sheet</h3>
-            <p>Various haze levels available</p>
+            <h3>Prismatic Diffuser Sheet</h3>
+            <p>Enhanced light control and efficiency</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
         <div class="product-card">
-          <div class="img">Prismatic Light Control — placeholder image</div>
+          <div class="img">Opal PMMA Sheet — placeholder image</div>
           <div class="body">
-            <h3>Prismatic Light Control Sheet</h3>
-            <p>Precision optical control</p>
+            <h3>Opal PMMA Sheet</h3>
+            <p>Smooth illumination without visible LEDs</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
         <div class="product-card">
-          <div class="img">Blue Light Blocking Sheet — placeholder image</div>
+          <div class="img">Blue-Light Reflective Acrylic Sheet — placeholder image</div>
           <div class="body">
-            <h3>Blue Light Blocking Sheet (Reflective)</h3>
-            <p>Eye protection series</p>
+            <h3>Blue-Light Reflective Acrylic Sheet (Blue Tint)</h3>
+            <p>Reflects blue light for protection</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
         <div class="product-card">
-          <div class="img">PC Diffusion Sheet — placeholder image</div>
+          <div class="img">Blue-Light Absorbing Acrylic Sheet — placeholder image</div>
           <div class="body">
-            <h3>PC Diffusion Sheet</h3>
-            <p>High heat resistance</p>
+            <h3>Blue-Light Absorbing Acrylic Sheet (Amber Tint)</h3>
+            <p>High-clarity blue-light absorption</p>
             <div class="more">Learn More →</div>
           </div>
         </div>
