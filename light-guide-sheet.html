@@ -283,11 +283,13 @@
 
     /* ── Customisation Options ── */
     .custom-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 24px;
     }
     .custom-card {
+      width: calc((100% - 48px) / 3);
       background: #fff;
       border-radius: 12px;
       padding: 24px;
@@ -466,7 +468,7 @@
 
       .features-grid { grid-template-columns: 1fr }
 
-      .custom-grid { grid-template-columns: 1fr }
+      .custom-card { width: 100% }
 
       .apps-row { flex-wrap: wrap }
 
@@ -567,16 +569,12 @@
             <div class="gallery-slide">
               <img src="images/products/light-guide-sheet/about-2.jpg" alt="Light Guide Sheet (LGP)" onerror="this.style.display='none'">
             </div>
-            <div class="gallery-slide">
-              <img src="images/products/light-guide-sheet/about-3.jpg" alt="Light Guide Sheet (LGP)" onerror="this.style.display='none'">
-            </div>
             <button class="gallery-arrow prev" aria-label="Previous image">&#8249;</button>
             <button class="gallery-arrow next" aria-label="Next image">&#8250;</button>
           </div>
           <div class="gallery-dots" id="lgp-dots">
             <button class="gallery-dot active" data-index="0" aria-label="Slide 1"></button>
             <button class="gallery-dot" data-index="1" aria-label="Slide 2"></button>
-            <button class="gallery-dot" data-index="2" aria-label="Slide 3"></button>
           </div>
         </div>
 
@@ -674,14 +672,6 @@
             <span class="custom-card-title">Standard &amp; Custom Sizes</span>
           </div>
           <div class="custom-card-desc">1200 × 2440mm + cut-to-size</div>
-        </div>
-
-        <div class="custom-card">
-          <div class="custom-card-header">
-            <span class="custom-num">03</span>
-            <span class="custom-card-title">Optical Dot Pattern Design</span>
-          </div>
-          <div class="custom-card-desc">Customised for light source and panel size</div>
         </div>
 
       </div>
