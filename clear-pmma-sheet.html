@@ -425,12 +425,12 @@
       font-size: 15px; color: var(--text-sub); line-height: 1.6;
       min-height: 48px; margin-top: 8px; text-align: left;
     }
-    .prod-card-more { margin-top: auto; padding-top: 16px; text-align: center }
-    .prod-card-more a {
+    .prod-card-more {
+      margin-top: auto; padding-top: 16px; text-align: center;
       font-size: 15px; color: var(--color-primary);
-      text-decoration: none; font-weight: 600; transition: color 0.2s ease;
+      font-weight: 600; transition: color 0.2s ease;
     }
-    .prod-card-more a:hover { color: var(--color-accent) }
+    .prod-card:hover .prod-card-more { color: var(--color-accent) }
 
     /* ── Footer ── */
     footer { background: var(--color-primary); color: #fff; padding: 60px 0 }
@@ -778,38 +778,38 @@
       <h2 class="section-title">Related Products</h2>
       <div class="related-grid">
 
-        <div class="prod-card">
+        <a class="prod-card" href="light-guide-sheet.html">
           <div class="prod-card-img">
             <img src="images/products/light-guide-sheet/thumb.jpg" alt="PMMA Light Guide Plate (LGP)" onerror="this.style.display='none'">
           </div>
           <div class="prod-card-body">
             <div class="prod-card-name">PMMA Light Guide Plate (LGP)</div>
             <div class="prod-card-desc">Uniform panel illumination</div>
-            <div class="prod-card-more"><a href="light-guide-sheet.html">Learn More →</a></div>
+            <div class="prod-card-more">Learn More →</div>
           </div>
-        </div>
+        </a>
 
-        <div class="prod-card">
+        <a class="prod-card" href="#">
           <div class="prod-card-img">
             <img src="images/products/colored-acrylic-sheet/thumb.jpg" alt="Coloured Acrylic Sheet" onerror="this.style.display='none'">
           </div>
           <div class="prod-card-body">
             <div class="prod-card-name">Coloured PMMA Sheet</div>
             <div class="prod-card-desc">Vibrant colours for creative applications</div>
-            <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            <div class="prod-card-more">Learn More →</div>
           </div>
-        </div>
+        </a>
 
-        <div class="prod-card">
+        <a class="prod-card" href="#">
           <div class="prod-card-img">
             <img src="images/products/frosted-acrylic-sheet/thumb.jpg" alt="Frosted Acrylic Sheet" onerror="this.style.display='none'">
           </div>
           <div class="prod-card-body">
             <div class="prod-card-name">Frosted PMMA Sheet</div>
             <div class="prod-card-desc">Soft light diffusion and glare reduction</div>
-            <div class="prod-card-more"><a href="#">Learn More →</a></div>
+            <div class="prod-card-more">Learn More →</div>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
