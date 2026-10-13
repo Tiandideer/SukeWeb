@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SUKE Acrylic — Contact (preview)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#1B3A6B;--color-accent:#D4A017;--color-bg:#fff;--color-muted-bg:#F5F6F8;--text-main:#2D2D2D;--text-sub:#6B7280;--shadow-default:0 2px 12px rgba(0,0,0,.08);--shadow-hover:0 8px 24px rgba(0,0,0,.15);--transition:.25s ease}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text-main);font-size:16px;line-height:1.7}
+h1,h2,h3{margin:0;color:var(--color-primary)}p{margin:0}
+.wrapper{max-width:1200px;margin:0 auto;padding:0 80px}
+header.nav{background:var(--color-primary);height:80px;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;gap:12px;align-items:center;color:#fff}
+.logo-mark{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.brand .sub{font-style:italic;color:rgba(173,199,232,.9);font-size:12px}
+.nav-menu{display:flex;gap:24px;align-items:center}
+.nav-menu a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+.nav-menu a.active{color:var(--color-accent);font-weight:700}
+.nav-cta{background:var(--color-accent);border-radius:8px;padding:10px 24px;font-weight:600}
+
+/* ===== CONTACT ===== */
+.contact-hero{position:relative;background:linear-gradient(135deg,#12294d 0%,#1B3A6B 60%,#244a85 100%);color:#fff;padding:110px 0 150px;overflow:hidden}
+.contact-hero::before{content:"";position:absolute;inset:0;background:url('factory.jpg') center/cover;opacity:.18;mix-blend-mode:luminosity}
+.contact-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:60px solid rgba(212,160,23,.12);border-radius:50%}
+.contact-hero .wrapper{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent);font-weight:600;margin-bottom:20px}
+.eyebrow::before{content:"";width:36px;height:2px;background:var(--color-accent)}
+.contact-hero h1{color:#fff;font-size:52px;line-height:1.15;font-weight:800;max-width:720px;margin-bottom:20px}
+.contact-hero p.lead{font-size:18px;color:rgba(255,255,255,.78);max-width:620px}
+.hero-badges{display:flex;gap:28px;flex-wrap:wrap;margin-top:36px}
+.hero-badges span{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.9)}
+.hero-badges span::before{content:"✓";display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--color-accent);color:#fff;font-size:12px;font-weight:700;align-items:center;justify-content:center}
+
+.contact-main{margin-top:-90px;position:relative;z-index:2}
+.contact-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:0;box-shadow:0 20px 60px rgba(27,58,107,.18);border-radius:14px;overflow:hidden;background:#fff}
+.form-card{padding:52px 52px 48px}
+.form-card h2{font-size:28px;margin-bottom:6px}
+.form-card .hint{color:var(--text-sub);font-size:14px;margin-bottom:30px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;margin-bottom:18px}
+.field label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:6px}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;padding:13px 14px;background:var(--color-muted-bg);border:1px solid transparent;border-radius:8px;color:var(--text-main);transition:var(--transition);width:100%}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:#fff;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(212,160,23,.15)}
+.submit{display:inline-flex;align-items:center;gap:10px;background:var(--color-accent);color:#fff;border:0;border-radius:8px;padding:15px 34px;font:inherit;font-weight:700;font-size:15px;letter-spacing:.04em;cursor:pointer;transition:var(--transition)}
+.submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,160,23,.4)}
+.form-note{font-size:12px;color:var(--text-sub);margin-top:14px}
+
+.info-card{background:var(--color-primary);color:#fff;padding:52px 44px;position:relative;overflow:hidden}
+.info-card::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border:40px solid rgba(212,160,23,.1);border-radius:50%}
+.info-card h3{color:#fff;font-size:22px;margin-bottom:30px}
+.info-item{display:flex;gap:16px;margin-bottom:26px;position:relative;z-index:1}
+.ico{flex:0 0 42px;height:42px;border-radius:10px;background:rgba(212,160,23,.16);color:var(--color-accent);display:flex;align-items:center;justify-content:center}
+.ico svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.info-item .label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(173,199,232,.9);margin-bottom:2px}
+.info-item .val{font-size:15px;line-height:1.6}
+.info-item a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);transition:var(--transition)}
+.info-item a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;margin-top:6px;background:#25D366;color:#fff!important;border:0!important;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600}
+.wa-btn:hover{filter:brightness(1.08);color:#fff!important}
+
+.stats{padding:90px 0 20px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center;padding:10px 20px;border-left:1px solid #e3e6ec}
+.stat:first-child{border-left:0}
+.stat .num{font-size:44px;font-weight:800;color:var(--color-primary);line-height:1.1}
+.stat .num em{font-style:normal;color:var(--color-accent)}
+.stat .cap{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-sub);margin-top:8px}
+
+.location{padding:70px 0 90px}
+.loc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+.loc-grid h2{font-size:32px;margin-bottom:16px}
+.loc-grid p{color:var(--text-sub);margin-bottom:12px}
+.loc-addr{background:var(--color-muted-bg);border-left:4px solid var(--color-accent);padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0;color:var(--text-main)!important;font-size:15px}
+.link-arrow{color:var(--color-primary);font-weight:600;text-decoration:none;border-bottom:2px solid var(--color-accent);padding-bottom:2px}
+.link-arrow:hover{color:var(--color-accent)}
+.map-card{height:380px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-default);background:var(--color-muted-bg)}
+.map-card iframe{width:100%;height:100%;border:0;display:block}
+
+
+/* Footer */
+    footer {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 60px 0
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 24px
+    }
+
+    .footer-grid>div {
+      flex: 1
+    }
+
+    .footer-line {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 20px 0
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: transparent;
+      transition: background var(--transition), border-color var(--transition)
+    }
+
+    .social-btn:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent)
+    }
+
+    .copyright {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-top: 12px
+    }
+
+    
+@media(max-width:1024px){.contact-grid{grid-template-columns:1fr}.loc-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+ .wrapper{padding:0 20px}.nav-menu{display:none}header.nav{height:64px}
+ .contact-hero{padding:70px 0 120px}.contact-hero h1{font-size:34px}
+ .form-card,.info-card{padding:32px 24px}.form-row{grid-template-columns:1fr}
+ .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:30px}.stat:nth-child(3){border-left:0}
+ .stat .num{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrapper nav-inner">
+  <div class="brand"><div class="logo-mark">SK</div><div><b>SUKE</b><div class="sub">Acrylic Sheet Manufacturer</div></div></div>
+  <nav class="nav-menu"><a href="#">Home</a><a href="#">Product Categories ▾</a><a href="#">About Us</a><a href="#contact" class="active">Contact</a><a class="nav-cta" href="#contact">Get a Quote</a></nav>
+</div></header>
+
+<section id="contact">
+  <!-- HERO -->
+  <div class="contact-hero"><div class="wrapper">
+    <div class="eyebrow">Contact Us</div>
+    <h1>Let's talk about your next project</h1>
+    <p class="lead">Tell us your product, thickness and quantity. Our sales and technical team will come back to you with specifications and a quotation.</p>
+    <div class="hero-badges">
+      <span>Reply within 24 hours</span>
+      <span>Samples available on request</span>
+      <span>Full-container export experience</span>
+    </div>
+  </div></div>
+
+  <!-- FORM + INFO -->
+  <div class="contact-main"><div class="wrapper">
+    <div class="contact-grid">
+      <form class="form-card" onsubmit="event.preventDefault();alert('Preview only — form sending not connected yet.')">
+        <h2>Request a Quote</h2>
+        <p class="hint">Fields marked * are required.</p>
+        <div class="form-row">
+          <div class="field"><label>Full Name *</label><input required placeholder="John Smith"></div>
+          <div class="field"><label>Company</label><input placeholder="Company name"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Email *</label><input type="email" required placeholder="name@company.com"></div>
+          <div class="field"><label>Country / Region</label><input placeholder="e.g. Germany"></div>
+        </div>
+        <div class="field"><label>Product of Interest</label>
+          <select>
+            <option>Select a product</option>
+            <optgroup label="Optical-Grade PMMA Sheet Series"><option>PMMA Light Guide Plate (LGP)</option><option>Clear PMMA Sheet</option><option>Coloured PMMA Sheet</option><option>Frosted PMMA Sheet</option></optgroup>
+            <optgroup label="PMMA Diffusion Sheet Series"><option>PMMA Diffuser Sheet</option><option>Prismatic PMMA Sheet</option><option>Opal PMMA Diffuser Sheet</option></optgroup>
+            <optgroup label="Blue-Light Filtering PMMA Sheet Series"><option>Blue-Light Reflective PMMA Sheet</option><option>Blue-Light Absorbing PMMA Sheet</option></optgroup>
+            <option>Polycarbonate (PC) Sheet</option><option>Polystyrene (PS) Sheet</option><option>Other / Not sure</option>
+          </select></div>
+        <div class="form-row">
+          <div class="field"><label>Thickness & Size</label><input placeholder="e.g. 3 mm, 1220 × 2440 mm"></div>
+          <div class="field"><label>Estimated Quantity</label><input placeholder="e.g. 1 × 20GP container"></div>
+        </div>
+        <div class="field"><label>Message</label><textarea placeholder="Application, special requirements, target delivery date…"></textarea></div>
+        <button class="submit" type="submit">Send Inquiry <span>→</span></button>
+        <p class="form-note">We respect your privacy. Your details are used only to respond to your inquiry.</p>
+      </form>
+
+      <aside class="info-card">
+        <h3>Get in touch directly</h3>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><div class="label">Email</div><div class="val"><a href="mailto:sales@suke-acrylic.com">sales@suke-acrylic.com</a></div></div></div>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+          <div><div class="label">Phone</div><div class="val"><a href="tel:+8615365087585">+86 153 6508 7585</a> <small style="opacity:.7">(China)</small><br><a href="tel:+610411984116">+61 0411 984 116</a> <small style="opacity:.7">(Australia)</small></div></div></div>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg></div>
+          <div><div class="label">WhatsApp</div><div class="val">+61 0411 984 116<br><a class="wa-btn" href="https://wa.me/610411984116" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div></div>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><div class="label">Factory Address</div><div class="val">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div></div></div>
+        <div class="info-item" style="margin-bottom:0"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><div class="label">Business Hours</div><div class="val">Mon – Fri, 8:30 – 17:30<br><small style="opacity:.7">China Standard Time (UTC+8)</small></div></div></div>
+      </aside>
+    </div>
+  </div></div>
+
+  <!-- STATS -->
+  <div class="stats"><div class="wrapper"><div class="stats-grid">
+    <div class="stat"><div class="num">2013</div><div class="cap">Founded in Nanjing</div></div>
+    <div class="stat"><div class="num">240<em>t</em></div><div class="cap">Monthly capacity</div></div>
+    <div class="stat"><div class="num">5,000<em>+</em></div><div class="cap">Tons per year</div></div>
+    <div class="stat"><div class="num">3</div><div class="cap">N. America · Europe · Japan</div></div>
+  </div></div></div>
+
+  <!-- LOCATION -->
+  <div class="location"><div class="wrapper"><div class="loc-grid">
+    <div>
+      <div class="eyebrow">Visit Our Factory</div>
+      <h2>Nanjing, Jiangsu, China</h2>
+      <p>Our extrusion lines and warehouse are in Jiangning District, Nanjing. Customers are welcome to visit for audits and technical discussions — please contact us in advance to arrange.</p>
+      <div class="loc-addr">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div>
+      <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=No.8+Jielin+Road+Lulang+Town+Jiangning+District+Nanjing">Open in Google Maps →</a>
+    </div>
+    <div class="map-card"><iframe title="SUKE Acrylic factory location" src="https://maps.google.com/maps?q=No.8+Jielin+Road,+Lulang+Town,+Jiangning+District,+Nanjing,+Jiangsu,+China&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  </div></div></div>
+</section>
+
+<footer>
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="logo-mark">SK</div>
+            <div>
+              <div style="font-weight:700">SUKE</div>
+              <div style="font-style:italic;color:rgba(173,199,232,0.9);font-size:12px">Acrylic Sheet Manufacturer</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.15em;font-size:12px">EMAIL</div>
+          <div style="opacity:0.8;margin-top:8px">sales@suke-acrylic.com</div>
+          <div style="height:12px"></div>
+          <div style="letter-spacing:0.15em;font-size:12px">PHONE</div>
+          <div style="margin-top:8px">+61 0411984116<br />+86 15365087585</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FACTORY ADDRESS</div>
+          <div style="margin-top:8px">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing,
+            Jiangsu Province, China</div>
+        </div>
+        <div>
+          <div style="letter-spacing:0.05em;font-size:12px">FOLLOW US</div>
+          <div style="margin-top:12px"><button class="social-btn">in</button></div>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="copyright">© 2025 SUKE Acrylic. All Rights Reserved. Designed by Didi</div>
+    </div>
+  </footer>
+</body>
+</html>
