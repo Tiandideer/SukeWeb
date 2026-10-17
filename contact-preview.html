@@ -208,6 +208,20 @@ header.nav{background:var(--color-primary);height:80px;display:flex;align-items:
     </div>
     <div class="map-card"><iframe title="SUKE Acrylic factory location" src="https://maps.google.com/maps?q=No.8+Jielin+Road,+Lulang+Town,+Jiangning+District,+Nanjing,+Jiangsu,+China&z=15&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
   </div></div></div>
+
+  <script>
+  // English validation messages (browser default follows the visitor's OS/browser language)
+  (function(){
+    var f=document.querySelector('#contact .form-card'); if(!f) return;
+    f.querySelectorAll('input,select,textarea').forEach(function(el){
+      el.addEventListener('invalid',function(){
+        if(el.validity.valueMissing) el.setCustomValidity('Please fill out this field.');
+        else if(el.validity.typeMismatch) el.setCustomValidity('Please enter a valid email address.');
+      });
+      el.addEventListener('input',function(){ el.setCustomValidity(''); });
+    });
+  })();
+  </script>
 </section>
 
 <footer>
@@ -240,7 +254,7 @@ header.nav{background:var(--color-primary);height:80px;display:flex;align-items:
         </div>
       </div>
       <div class="footer-line"></div>
-      <div class="copyright">© 2025 SUKE Acrylic. All Rights Reserved. Designed by Didi</div>
+      <div class="copyright">© 2026 SUKE Acrylic. All Rights Reserved. Designed by Didi</div>
     </div>
   </footer>
 </body>
