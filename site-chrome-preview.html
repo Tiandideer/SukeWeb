@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SUKE — site chrome (nav + footer) preview</title>
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#1B3A6B;--color-accent:#D4A017;--transition:.25s ease}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#2D2D2D;line-height:1.7}
+.wrapper{max-width:1200px;margin:0 auto;padding:0 80px}
+
+/* ===== NAV: translucent glass, hides on scroll down, returns on scroll up ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(27,58,107,.50);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  transition:transform .35s ease,background .3s ease,box-shadow .3s ease}
+header.nav.nav-scrolled{background:rgba(20,44,86,.82);box-shadow:0 4px 20px rgba(0,0,0,.18)}
+header.nav.nav-hidden{transform:translateY(-100%)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.brand-logo{height:46px;width:auto;display:block}
+.brand .title{font-weight:700;letter-spacing:.05em}
+.brand .subtitle{font-style:italic;color:rgba(255,255,255,.7);font-size:12px;margin-top:1px}
+.nav-menu{display:flex;align-items:center;gap:24px}
+.nav-menu a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s ease}
+.nav-menu a:hover,.nav-menu a.active{color:var(--color-accent)}
+.nav-menu a.active{font-weight:700}
+.nav-cta{background:var(--color-accent);color:#fff!important;border-radius:8px;padding:10px 24px;font-weight:600}
+
+/* ===== FOOTER: quote band + ink-navy body with watermark ===== */
+.quote-band{position:relative;overflow:hidden;color:#fff;padding:54px 0;
+  background:linear-gradient(110deg,#102a56 0%,#1B3A6B 60%,#2a4f8c 100%)}
+.quote-band::after{content:"";position:absolute;right:-90px;top:-140px;width:340px;height:340px;border:48px solid rgba(212,160,23,.14);border-radius:50%}
+.quote-band .wrapper{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.quote-band h3{margin:0 0 4px;font-size:28px;font-weight:800;color:#fff}
+.quote-band p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.quote-band .btn{background:var(--color-accent);color:#fff;text-decoration:none;border-radius:8px;padding:14px 30px;font-weight:700;white-space:nowrap;transition:transform var(--transition),opacity var(--transition)}
+.quote-band .btn:hover{transform:translateY(-2px);opacity:.92}
+
+footer.site-footer{position:relative;overflow:hidden;background:#0a1730;color:#fff;padding:70px 0 0}
+footer.site-footer::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(212,160,23,.95),transparent)}
+.footer-glow{position:absolute;left:-200px;top:-260px;width:620px;height:620px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,110,200,.22),transparent);pointer-events:none}
+.footer-watermark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:520px;opacity:.05;pointer-events:none}
+footer.site-footer .wrapper{position:relative;z-index:1}
+.f-grid{display:grid;grid-template-columns:1.3fr 1.1fr .8fr 1.2fr;gap:40px}
+.f-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent);font-weight:600;margin-bottom:14px}
+.f-col a,.f-col div{display:block;color:rgba(255,255,255,.78);font-size:14px;line-height:2;text-decoration:none;transition:color .2s ease}
+.f-col a:hover{color:#fff}
+.f-logo{height:60px;width:auto;display:block;margin-bottom:16px}
+.f-about{font-size:13px!important;color:rgba(255,255,255,.6)!important;line-height:1.8!important;max-width:270px}
+.f-addr{margin-top:6px;font-size:13px!important;line-height:1.7!important;color:rgba(255,255,255,.6)!important}
+.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.5);display:inline-flex!important;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:10px;line-height:1!important;transition:var(--transition)}
+.social-btn:hover{background:var(--color-accent);border-color:var(--color-accent)}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.12);padding:22px 0 26px;margin-top:48px}
+
+@media(max-width:1024px){.f-grid{grid-template-columns:1fr 1fr}.quote-band .wrapper{flex-direction:column;align-items:flex-start}}
+@media(max-width:768px){
+  .wrapper{padding:0 20px}.nav-inner{height:64px}.nav-menu{display:none}.brand-logo{height:40px}
+  .f-grid{grid-template-columns:1fr}.f-bottom{flex-direction:column;gap:6px;align-items:flex-start}
+  .quote-band h3{font-size:22px}.footer-watermark{width:340px}
+}
+
+/* ---- demo-only ---- */
+.demo-hero{height:520px;background:linear-gradient(135deg,rgba(18,41,77,.9),rgba(27,58,107,.78)),url('factory.jpg') center/cover;color:#fff;padding-top:200px}
+.demo-hero h1{margin:0;font-size:46px;font-weight:800;color:#fff}
+.demo-body{padding:70px 0;background:#fff}.demo-body i{display:block;height:14px;border-radius:7px;background:#e7eaf0;margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR (keep each page's existing menu links / dropdown; only the logo + classes change) ═══ -->
+<header class="nav" id="site-nav">
+  <div class="wrapper nav-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="suke-logo-white.png" alt="SUKE logo">
+      <div><div class="title">SUKE</div><div class="subtitle">Acrylic Sheet Manufacturer</div></div>
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Product Categories ▾</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="about.html#contact">Contact</a>
+      <a class="nav-cta" href="about.html#quote">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- demo content so the scroll behaviour can be tried in this file -->
+<div class="demo-hero"><div class="wrapper"><h1>Demo page — scroll down, then up</h1></div></div>
+<div class="demo-body"><div class="wrapper"><i style="width:60%"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:85%"></i><i style="width:50%"></i><div style="height:600px"></div></div></div>
+
+<!-- ═══ FOOTER ═══ -->
+<section class="quote-band">
+  <div class="wrapper">
+    <div><h3>Ready to discuss your order?</h3><p>Send us your specifications and we'll reply with a quotation.</p></div>
+    <a class="btn" href="about.html#quote">Get a Quote →</a>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-glow"></div>
+  <img class="footer-watermark" src="suke-logo-white.png" alt="">
+  <div class="wrapper">
+    <div class="f-grid">
+      <div class="f-col">
+        <img class="f-logo" src="suke-logo-white.png" alt="SUKE logo">
+        <div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets for LED backlighting, lighting and display.</div>
+      </div>
+      <div class="f-col">
+        <div class="f-label">Products</div>
+        <a href="products.html#optical-grade">Optical-Grade PMMA Sheets</a>
+        <a href="products.html#diffusion">PMMA Diffusion Sheets</a>
+        <a href="products.html#blue-light">Blue-Light Filtering Sheets</a>
+        <a href="polycarbonate-pc-sheet.html">Polycarbonate (PC) Sheet</a>
+        <a href="polystyrene-ps-sheet.html">Polystyrene (PS) Sheet</a>
+      </div>
+      <div class="f-col">
+        <div class="f-label">Company</div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+      <div class="f-col">
+        <div class="f-label">Contact</div>
+        <a href="mailto:sales@suke-acrylic.com">sales@suke-acrylic.com</a>
+        <a href="tel:+610411984116">+61 0411984116</a>
+        <a href="tel:+8615365087585">+86 15365087585</a>
+        <div class="f-addr">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div>
+        <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div>
+  </div>
+</footer>
+
+<script>
+// Nav: translucent at top, darker once scrolled, hides on scroll down, returns on scroll up
+(function () {
+  var nav = document.getElementById('site-nav');
+  if (!nav) return;
+  var lastY = window.pageYOffset, ticking = false, hovering = false;
+  nav.addEventListener('mouseenter', function () { hovering = true; nav.classList.remove('nav-hidden'); });
+  nav.addEventListener('mouseleave', function () { hovering = false; });
+  function update() {
+    var y = window.pageYOffset, dy = y - lastY;
+    nav.classList.toggle('nav-scrolled', y > 40);
+    if (y <= 80 || hovering) nav.classList.remove('nav-hidden');
+    else if (dy > 8) { nav.classList.add('nav-hidden'); lastY = y; }
+    else if (dy < -8) { nav.classList.remove('nav-hidden'); lastY = y; }
+    if (y <= 80) lastY = y;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
