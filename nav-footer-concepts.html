@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SUKE — translucent nav + footer concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B3A6B;--gold:#D4A017}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#dfe3ea;color:#2D2D2D;padding:28px 0 70px;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h2.sec{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#1B3A6B;margin:36px 0 6px}
+p.note{margin:0 0 12px;font-size:13px;color:#5b6472}
+.frame{border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.14);position:relative;background:#fff}
+
+/* ---------- NAV (translucent) ---------- */
+.nav{position:absolute;left:0;right:0;top:0;z-index:5;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;
+ background:rgba(27,58,107,.50);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);
+ border-bottom:1px solid rgba(255,255,255,.16)}
+.nav.solidish{background:rgba(20,44,86,.78)}
+.brand{display:flex;align-items:center;gap:14px;color:#fff}
+.brand img{height:46px;width:auto;display:block}
+.brand .t{font-weight:700;letter-spacing:.05em}.brand .s{font-style:italic;font-size:12px;color:rgba(255,255,255,.7);margin-top:1px}
+.menu{display:flex;gap:24px;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.menu .on{color:var(--gold);font-weight:700}.cta{background:var(--gold);border-radius:8px;padding:9px 20px;font-weight:600}
+.hero{height:250px;background:linear-gradient(135deg,rgba(18,41,77,.9),rgba(27,58,107,.78)),url('factory.jpg') center/cover;padding:128px 56px 0;color:#fff}
+.hero b{font-size:26px;font-weight:800;line-height:1.15;display:block}
+.page{height:250px;padding:112px 56px 0;background:#fff}
+.page i{display:block;height:12px;border-radius:6px;background:#e7eaf0;margin-bottom:14px}
+.page .blk{height:70px;border-radius:10px;background:#f1f3f7;margin:18px 0}
+
+/* ---------- FOOTERS ---------- */
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px}
+.f-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.f-col a,.f-col div{display:block;color:rgba(255,255,255,.78);font-size:14px;line-height:2;text-decoration:none}
+.f-col a:hover{color:#fff}
+.f-logo{height:60px;width:auto;display:block;margin-bottom:16px}
+.f-about{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;max-width:270px}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:44px}
+.in{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+
+/* F1: ink-navy + watermark */
+.F1{position:relative;overflow:hidden;background:#0a1730;padding:68px 56px 30px;color:#fff}
+.F1::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,.9),transparent)}
+.F1 .wm{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:520px;opacity:.05;pointer-events:none}
+.F1 .glow{position:absolute;left:-200px;top:-260px;width:620px;height:620px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,110,200,.22),transparent)}
+.F1>*{position:relative}.F1 .wm,.F1 .glow{position:absolute}
+
+/* F2: frosted glass on factory photo */
+.F2{position:relative;padding:60px 56px 30px;color:#fff;background:linear-gradient(180deg,rgba(10,23,48,.82),rgba(10,23,48,.94)),url('factory.jpg') center/cover}
+.F2 .glass{background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:44px 44px 8px}
+.F2 .f-bottom{border-top-color:rgba(255,255,255,.14);padding-bottom:14px}
+
+/* F3: CTA band + link columns */
+.F3 .band{background:linear-gradient(110deg,#102a56 0%,#1B3A6B 60%,#2a4f8c 100%);padding:46px 56px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:#fff;position:relative;overflow:hidden}
+.F3 .band::after{content:"";position:absolute;right:-90px;top:-130px;width:330px;height:330px;border:46px solid rgba(212,160,23,.14);border-radius:50%}
+.F3 .band h3{margin:0 0 4px;font-size:26px;color:#fff;font-weight:800}.F3 .band p{margin:0;color:rgba(255,255,255,.75);font-size:14px}
+.F3 .band .btn{background:var(--gold);color:#fff;border-radius:8px;padding:14px 30px;font-weight:700;position:relative;z-index:1;white-space:nowrap}
+.F3 .body{background:#091428;padding:58px 56px 28px;color:#fff;border-top:3px solid var(--gold)}
+</style></head><body><div class="wrap">
+
+<h2 class="sec">1 · 半透明导航栏(玻璃质感)+ 白色 logo</h2>
+<p class="note">logo 改成纯白线条版(椭圆描边 + 白色 SK)。导航栏是半透明蓝色加背景模糊:在顶部能透出下面的厂房照片;滚到白色内容上时,背景会自动变深一点(下图右侧),保证文字看得清。</p>
+<div style="display:grid;grid-template-columns:1fr;gap:18px">
+  <div class="frame"><div class="nav"><div class="brand"><img src="suke-logo-white.png" alt=""><div><div class="t">SUKE</div><div class="s">Acrylic Sheet Manufacturer</div></div></div><div class="menu"><span>Home</span><span>Products ▾</span><span class="on">About</span><span>Contact</span><span class="cta">Get a Quote</span></div></div><div class="hero"><b>页面顶部:半透明,透出下面的厂房照片</b></div></div>
+  <div class="frame"><div class="nav solidish"><div class="brand"><img src="suke-logo-white.png" alt=""><div><div class="t">SUKE</div><div class="s">Acrylic Sheet Manufacturer</div></div></div><div class="menu"><span>Home</span><span>Products ▾</span><span class="on">About</span><span>Contact</span><span class="cta">Get a Quote</span></div></div><div class="page"><i style="width:50%"></i><i style="width:80%"></i><i style="width:40%"></i><div class="blk"></div></div></div>
+</div>
+
+<h2 class="sec">2 · 页脚方案 F1 — 墨蓝 + 水印 logo</h2>
+<p class="note">单色近黑蓝底,顶部一条金色渐隐细线,左上角一点柔和的蓝光,右侧放一个大号的、几乎看不见的 logo 水印。克制、安静,最接近你说的高级感。</p>
+<div class="frame F1"><div class="glow"></div><img class="wm" src="suke-logo-white.png" alt="">
+  <div class="f-grid">
+    <div class="f-col"><img class="f-logo" src="suke-logo-white.png" alt=""><div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets for LED backlighting, lighting and display.</div></div>
+    <div class="f-col"><div class="f-label">Contact</div><a>sales@suke-acrylic.com</a><div>+61 0411984116</div><div>+86 15365087585</div></div>
+    <div class="f-col" style="grid-column:span 2"><div class="f-label">Factory</div><div>No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div><div style="margin-top:10px"><span class="in">in</span></div></div>
+  </div>
+  <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div>
+</div>
+
+<h2 class="sec">3 · 页脚方案 F2 — 毛玻璃面板压在厂房照片上</h2>
+<p class="note">页脚背景用厂房照片(压深),信息放在一块半透明毛玻璃面板里,和顶部半透明导航栏呼应,整站前后风格统一。</p>
+<div class="frame F2"><div class="glass">
+  <div class="f-grid">
+    <div class="f-col"><img class="f-logo" src="suke-logo-white.png" alt=""><div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets.</div></div>
+    <div class="f-col"><div class="f-label">Contact</div><a>sales@suke-acrylic.com</a><div>+61 0411984116</div><div>+86 15365087585</div></div>
+    <div class="f-col" style="grid-column:span 2"><div class="f-label">Factory</div><div>No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div><div style="margin-top:10px"><span class="in">in</span></div></div>
+  </div>
+  <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div>
+</div></div>
+
+<h2 class="sec">4 · 页脚方案 F3 — 顶部询价横条 + 导航链接栏</h2>
+<p class="note">页脚上方加一条询价横条("Ready to discuss your order?"+ 金色按钮),下面是深色页脚,多了产品和页面快捷链接栏,更像成熟的企业站,也方便客户直接跳转。</p>
+<div class="frame F3"><div class="band"><div><h3>Ready to discuss your order?</h3><p>Send us your specifications and we'll reply with a quotation.</p></div><div class="btn">Get a Quote →</div></div>
+  <div class="body"><div class="f-grid" style="grid-template-columns:1.3fr 1.1fr .8fr 1.2fr">
+    <div class="f-col"><img class="f-logo" src="suke-logo-white.png" alt=""><div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets.</div></div>
+    <div class="f-col"><div class="f-label">Products</div><a>Optical-Grade PMMA Sheets</a><a>PMMA Diffusion Sheets</a><a>Blue-Light Filtering Sheets</a><a>Polycarbonate (PC) Sheet</a><a>Polystyrene (PS) Sheet</a></div>
+    <div class="f-col"><div class="f-label">Company</div><a>Home</a><a>About Us</a><a>Contact</a></div>
+    <div class="f-col"><div class="f-label">Contact</div><a>sales@suke-acrylic.com</a><div>+61 0411984116</div><div>+86 15365087585</div><div style="margin-top:6px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)">No. 8 Jielin Road, Lulang Town, Jiangning District, Nanjing, China</div></div>
+  </div>
+  <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div></div>
+</div>
+
+</div></body></html>
