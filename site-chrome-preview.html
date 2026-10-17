@@ -14,15 +14,15 @@ body{margin:0;font-family:Inter,system-ui,sans-serif;color:#2D2D2D;line-height:1
 
 /* ===== NAV: translucent glass, hides on scroll down, returns on scroll up ===== */
 header.nav{position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(27,58,107,.50);
+  background:rgba(20,44,86,.78);
   -webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);
   border-bottom:1px solid rgba(255,255,255,.16);
-  transition:transform .35s ease,background .3s ease,box-shadow .3s ease}
-header.nav.nav-scrolled{background:rgba(20,44,86,.82);box-shadow:0 4px 20px rgba(0,0,0,.18)}
+  transition:transform .35s ease,box-shadow .3s ease}
+header.nav.nav-scrolled{box-shadow:0 4px 20px rgba(0,0,0,.18)}
 header.nav.nav-hidden{transform:translateY(-100%)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
 .brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
-.brand-logo{height:46px;width:auto;display:block}
+.brand-logo{height:48px;width:auto;display:block}
 .brand .title{font-weight:700;letter-spacing:.05em}
 .brand .subtitle{font-style:italic;color:rgba(255,255,255,.7);font-size:12px;margin-top:1px}
 .nav-menu{display:flex;align-items:center;gap:24px}
@@ -31,37 +31,28 @@ header.nav.nav-hidden{transform:translateY(-100%)}
 .nav-menu a.active{font-weight:700}
 .nav-cta{background:var(--color-accent);color:#fff!important;border-radius:8px;padding:10px 24px;font-weight:600}
 
-/* ===== FOOTER: quote band + ink-navy body with watermark ===== */
-.quote-band{position:relative;overflow:hidden;color:#fff;padding:54px 0;
-  background:linear-gradient(110deg,#102a56 0%,#1B3A6B 60%,#2a4f8c 100%)}
-.quote-band::after{content:"";position:absolute;right:-90px;top:-140px;width:340px;height:340px;border:48px solid rgba(212,160,23,.14);border-radius:50%}
-.quote-band .wrapper{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.quote-band h3{margin:0 0 4px;font-size:28px;font-weight:800;color:#fff}
-.quote-band p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
-.quote-band .btn{background:var(--color-accent);color:#fff;text-decoration:none;border-radius:8px;padding:14px 30px;font-weight:700;white-space:nowrap;transition:transform var(--transition),opacity var(--transition)}
-.quote-band .btn:hover{transform:translateY(-2px);opacity:.92}
-
-footer.site-footer{position:relative;overflow:hidden;background:#0a1730;color:#fff;padding:70px 0 0}
-footer.site-footer::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(212,160,23,.95),transparent)}
-.footer-glow{position:absolute;left:-200px;top:-260px;width:620px;height:620px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,110,200,.22),transparent);pointer-events:none}
-.footer-watermark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:520px;opacity:.05;pointer-events:none}
+/* ===== FOOTER: frosted glass panel over the factory photo ===== */
+footer.site-footer{position:relative;overflow:hidden;color:#fff;padding:70px 0 40px;
+  background:linear-gradient(180deg,rgba(10,23,48,.82),rgba(10,23,48,.94)),url('factory.jpg') center/cover}
 footer.site-footer .wrapper{position:relative;z-index:1}
-.f-grid{display:grid;grid-template-columns:1.3fr 1.1fr .8fr 1.2fr;gap:40px}
+.f-glass{background:rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:48px 48px 8px}
+.f-grid{display:grid;grid-template-columns:1.2fr 1fr 1.4fr;gap:48px}
 .f-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent);font-weight:600;margin-bottom:14px}
-.f-col a,.f-col div{display:block;color:rgba(255,255,255,.78);font-size:14px;line-height:2;text-decoration:none;transition:color .2s ease}
+.f-col a,.f-col div{display:block;color:rgba(255,255,255,.82);font-size:14px;line-height:2;text-decoration:none;transition:color .2s ease}
 .f-col a:hover{color:#fff}
-.f-logo{height:60px;width:auto;display:block;margin-bottom:16px}
-.f-about{font-size:13px!important;color:rgba(255,255,255,.6)!important;line-height:1.8!important;max-width:270px}
-.f-addr{margin-top:6px;font-size:13px!important;line-height:1.7!important;color:rgba(255,255,255,.6)!important}
-.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.5);display:inline-flex!important;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:10px;line-height:1!important;transition:var(--transition)}
+.f-logo{height:64px;width:auto;display:block;margin-bottom:16px}
+.f-about{font-size:13px!important;color:rgba(255,255,255,.65)!important;line-height:1.8!important;max-width:280px}
+.f-addr{line-height:1.8!important}
+.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.55);display:inline-flex!important;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:12px;line-height:1!important;transition:var(--transition)}
 .social-btn:hover{background:var(--color-accent);border-color:var(--color-accent)}
-.f-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.12);padding:22px 0 26px;margin-top:48px}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.55);border-top:1px solid rgba(255,255,255,.14);padding:22px 0 26px;margin-top:44px}
 
-@media(max-width:1024px){.f-grid{grid-template-columns:1fr 1fr}.quote-band .wrapper{flex-direction:column;align-items:flex-start}}
+@media(max-width:1024px){.f-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){
   .wrapper{padding:0 20px}.nav-inner{height:64px}.nav-menu{display:none}.brand-logo{height:40px}
   .f-grid{grid-template-columns:1fr}.f-bottom{flex-direction:column;gap:6px;align-items:flex-start}
-  .quote-band h3{font-size:22px}.footer-watermark{width:340px}
+  .f-glass{padding:32px 24px 4px}
 }
 
 /* ---- demo-only ---- */
@@ -76,7 +67,7 @@ footer.site-footer .wrapper{position:relative;z-index:1}
 <header class="nav" id="site-nav">
   <div class="wrapper nav-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="suke-logo-white.png" alt="SUKE logo">
+      <img class="brand-logo" src="suke-logo-nav.png" alt="SUKE logo">
       <div><div class="title">SUKE</div><div class="subtitle">Acrylic Sheet Manufacturer</div></div>
     </a>
     <nav class="nav-menu">
@@ -94,45 +85,28 @@ footer.site-footer .wrapper{position:relative;z-index:1}
 <div class="demo-body"><div class="wrapper"><i style="width:60%"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:85%"></i><i style="width:50%"></i><div style="height:600px"></div></div></div>
 
 <!-- ═══ FOOTER ═══ -->
-<section class="quote-band">
-  <div class="wrapper">
-    <div><h3>Ready to discuss your order?</h3><p>Send us your specifications and we'll reply with a quotation.</p></div>
-    <a class="btn" href="about.html#quote">Get a Quote →</a>
-  </div>
-</section>
 <footer class="site-footer">
-  <div class="footer-glow"></div>
-  <img class="footer-watermark" src="suke-logo-white.png" alt="">
   <div class="wrapper">
-    <div class="f-grid">
-      <div class="f-col">
-        <img class="f-logo" src="suke-logo-white.png" alt="SUKE logo">
-        <div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets for LED backlighting, lighting and display.</div>
+    <div class="f-glass">
+      <div class="f-grid">
+        <div class="f-col">
+          <img class="f-logo" src="suke-logo-nav.png" alt="SUKE logo">
+          <div class="f-about">Nanjing Suke Photoelectric Technology Co., Ltd. Extruded PMMA, PC and PS sheets.</div>
+        </div>
+        <div class="f-col">
+          <div class="f-label">Contact</div>
+          <a href="mailto:sales@suke-acrylic.com">sales@suke-acrylic.com</a>
+          <a href="tel:+610411984116">+61 0411984116</a>
+          <a href="tel:+8615365087585">+86 15365087585</a>
+        </div>
+        <div class="f-col">
+          <div class="f-label">Factory Address</div>
+          <div class="f-addr">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div>
+          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+        </div>
       </div>
-      <div class="f-col">
-        <div class="f-label">Products</div>
-        <a href="products.html#optical-grade">Optical-Grade PMMA Sheets</a>
-        <a href="products.html#diffusion">PMMA Diffusion Sheets</a>
-        <a href="products.html#blue-light">Blue-Light Filtering Sheets</a>
-        <a href="polycarbonate-pc-sheet.html">Polycarbonate (PC) Sheet</a>
-        <a href="polystyrene-ps-sheet.html">Polystyrene (PS) Sheet</a>
-      </div>
-      <div class="f-col">
-        <div class="f-label">Company</div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="about.html#contact">Contact</a>
-      </div>
-      <div class="f-col">
-        <div class="f-label">Contact</div>
-        <a href="mailto:sales@suke-acrylic.com">sales@suke-acrylic.com</a>
-        <a href="tel:+610411984116">+61 0411984116</a>
-        <a href="tel:+8615365087585">+86 15365087585</a>
-        <div class="f-addr">No. 8 Jielin Road, Huatang Community, Lulang Town, Jiangning District, Nanjing, Jiangsu Province, China</div>
-        <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
-      </div>
+      <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div>
     </div>
-    <div class="f-bottom"><span>© 2026 SUKE Acrylic. All Rights Reserved.</span><span>Designed by Didi</span></div>
   </div>
 </footer>
 
